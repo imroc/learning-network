@@ -41,7 +41,7 @@ hero_media = "book.svg"
   label = "开始阅读"
   icon_pack = "fas"
   icon = "arrow-alt-circle-right"
-  
+
 [cta_alt]
   url = "https://github.com/imroc/learning-network/"
   label = "查看源码"
