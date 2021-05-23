@@ -43,11 +43,11 @@ hero_media = "book.svg"
   icon = "arrow-alt-circle-right"
   
 [cta_alt]
-  url = "https://github.com/imroc/learning-kubernetes/"
+  url = "https://github.com/imroc/learning-network/"
   label = "查看源码"
 
 +++
 
 分享 Kubernetes 相关理论知识与实践经验，欢迎关注微信公众号 "云原生知识宇宙"。
 
-<span style="text-shadow: none;"><a class="github-button" href="https://github.com/imroc/learning-kubernetes" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this on GitHub">Star</a><script async defer src="https://buttons.github.io/buttons.js"></script></span>
+<span style="text-shadow: none;"><a class="github-button" href="https://github.com/imroc/learning-network" data-icon="octicon-star" data-size="large" data-show-count="true" aria-label="Star this on GitHub">Star</a><script async defer src="https://buttons.github.io/buttons.js"></script></span>
