@@ -1,16 +1,18 @@
 ---
-title: "分析 dns 异常"
+title: "wireshark 实用技巧"
 type: book
-date: "2021-05-23"
+date: "2021-07-20"
 ---
 
-## 没有收到响应的 dns 请求
+## 分析 DNS 异常
+
+### 没有收到响应的 dns 请求
 
 ```txt
 dns && (dns.flags.response == 0) && ! dns.response_in
 ```
 
-## 过滤 NXDomain 的响应
+### 过滤 NXDomain 的响应
 
 所有 `No such name` 的响应:
 
