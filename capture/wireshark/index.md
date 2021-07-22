@@ -45,3 +45,33 @@ dns.flags.rcode == 3
 ```txt
 ((dns.flags.rcode == 3) && (dns.qry.name == "imroc.cc")
 ```
+
+## 分析 TCP 异常
+
+### 找出连接超时的请求
+
+客户端连接超时，如果不是因为 dns 解析超时，那就是因为 tcp 握手超时了，通常是服务端没响应 SYNACK 或响应太慢。
+
+超时的时候客户端一般会发 RST 给服务端，过滤出握手超时的包:
+
+```txt
+(tcp.flags.reset eq 1) and (tcp.flags.ack eq 0)
+```
+
+过滤出服务端握手时响应 SYNACK 慢的包:
+
+```txt
+tcp.flags eq 0x012 && tcp.time_delta gt 0.0001
+```
+
+还可以将 `Time since previous frame in this TCP stream` 添加为一列:
+
+![](1.png)
+
+点击列名降序排列可查出慢包 (可加更多条件过滤调不需要希望展示的包):
+
+![](2.png)
+
+找出可疑包后使用 `Conversation Filter` 过滤出完整连接的完整会话内容:
+
+![](3.png)
